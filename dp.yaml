@@ -1,0 +1,21 @@
+apiVersion: datapower.ibm.com/v1beta2
+kind: DataPowerService
+metadata:
+  name: quickstart-2
+  namespace: dp-cp4i
+spec:
+  license:
+    accept: true
+    use: nonproduction
+  replicas: 1
+  resources:
+    limits:
+      memory: 4Gi
+    requests:
+      cpu: 4
+      memory: 4Gi
+  version: 10.0-lts
+  users:
+    - name: admin
+      accessLevel: privileged
+      passwordSecret: admin-credentials
